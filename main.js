@@ -20,8 +20,11 @@ function geraCard(srcImg, nomeArtista, rankArtista, playsArtista, urlArtista){
     
 };
 
-$.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=didiraja&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json",
-    function(response){
+$("#busca-api").click(function(){
+    
+    var userProfile = $("#user-profile").val();
+    
+   $.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&user=" + userProfile + "&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json", function(response){
         
         var artists = response.topartists.artist;
     
@@ -32,5 +35,7 @@ $.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=didiraja
         }
     
     
-    });
+    }); 
+    
+});
 

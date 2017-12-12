@@ -9,11 +9,7 @@
 
     <title>Last.fm API</title>
     
-    <style>
-        #main { margin-top: 5em; }
-        
-        .card { width: 30%; margin-bottom: 2em;}
-    </style>
+    <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -55,7 +51,41 @@
             </form>
         </div>
     </nav>
+    
+    <div class="space-navbar"></div>
 
+    <section class="input-profile">
+        
+        <div class="container">
+          
+          <div class="row">
+              
+              <div class="col-md-12">
+               
+                <div class="input-group">
+                 
+                  <span class="input-group-addon">last.fm/user/</span>
+                  
+                  <input type="text" class="form-control" id="user-profile" placeholder="Digita seu nome de usuário no Last.fm">
+                  
+                  <span class="input-group-btn">
+                   
+                    <button id="busca-api" class="btn btn-danger" type="button">Buscar</button>
+                    
+                  </span>
+                  
+                </div>
+                
+            </div>
+              
+          </div>
+            
+        </div>
+                
+    </section>
+    
+    <section></section>
+   
     <div class="container">
         
         <div id="main" class="col-md-12 d-flex flex-wrap justify-content-around">
