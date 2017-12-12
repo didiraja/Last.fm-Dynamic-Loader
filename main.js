@@ -4,9 +4,9 @@ function geraCard(srcImg, nomeArtista, rankArtista, playsArtista, urlArtista){
     var cardDiv = $("<div>").addClass("card");
     var cardImg = $("<img>").addClass("card-img-top").attr("src", srcImg).attr("alt", nomeArtista);
     var cardBody = $("<div>").addClass("card-body");
-    var cardRank = $("<h1>").addClass("artist-rank").addClass("card-title").text(rankArtista);
-    var cardName = $("<h4>").addClass("card-title").text(nomeArtista);
-    var cardPlays = $("<p>").addClass("card-text").text(playsArtista);
+    var cardRank = $("<h1>").addClass("artist-rank").addClass("d-inline").text("#"+rankArtista);
+    var cardName = $("<h4>").addClass("card-title").addClass("d-inline").text(nomeArtista);
+    var cardPlays = $("<p>").addClass("card-text").text(playsArtista + " plays");
     var cardLink = $("<a>").attr("href", urlArtista).attr("target", "blank").addClass("btn btn-danger").text("Acesse a página do artista");
 
     /* agrupa a parte principal do conteúdo */
@@ -20,7 +20,7 @@ function geraCard(srcImg, nomeArtista, rankArtista, playsArtista, urlArtista){
     
 };
 
-$("#busca-api").click(function(){
+/*$("#busca-api").click(function(){
     
     var userProfile = $("#user-profile").val();
     
@@ -37,5 +37,17 @@ $("#busca-api").click(function(){
     
     }); 
     
-});
+});*/
 
+$.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&user=didiraja&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json", function(response){
+        
+        var artists = response.topartists.artist;
+    
+        for (i = 0; i < 6; i++) { 
+            
+            geraCard(artists[i].image[4]["#text"], artists[i].name, artists[i]["@attr"].rank, artists[i].playcount, artists[i].url);
+            
+        }
+    
+    
+    });

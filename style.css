@@ -1,3 +1,15 @@
+nav.bg-primary {
+    background-color: #d51007!important;
+}
+
+.btn-danger {
+    background-color: #d51007;
+}
+
+.btn-danger:hover {
+    background-color: rgba(213, 16, 7, .5);
+}
+
 .space-navbar {
     margin-bottom: 5em;
 }
@@ -9,4 +21,9 @@
 .card {
     width: 30%;
     margin-bottom: 2em;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+.artist-rank {
+    margin-right: .2em;
 }
