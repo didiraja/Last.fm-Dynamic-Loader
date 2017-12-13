@@ -1,5 +1,11 @@
 nav.bg-primary {
     background-color: #d51007!important;
+    margin-bottom: 2em;
+}
+
+.logo {
+    width: 6em;
+    padding: .3em 0;
 }
 
 .btn-danger {
@@ -10,12 +16,8 @@ nav.bg-primary {
     background-color: rgba(213, 16, 7, .5);
 }
 
-.space-navbar {
-    margin-bottom: 5em;
-}
-
 .input-profile {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .card {
@@ -26,4 +28,13 @@ nav.bg-primary {
 
 .artist-rank {
     margin-right: .2em;
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .card {
+        width: initial;
+    }
+    
 }

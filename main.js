@@ -20,7 +20,9 @@ function geraCard(srcImg, nomeArtista, rankArtista, playsArtista, urlArtista){
     
 };
 
-/*$("#busca-api").click(function(){
+$("#busca-api").click(function(){
+    
+    $(".card").remove();
     
     var userProfile = $("#user-profile").val();
     
@@ -37,9 +39,9 @@ function geraCard(srcImg, nomeArtista, rankArtista, playsArtista, urlArtista){
     
     }); 
     
-});*/
+});
 
-$.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&user=didiraja&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json", function(response){
+/*$.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&user=didiraja&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json", function(response){
         
         var artists = response.topartists.artist;
     
@@ -50,4 +52,4 @@ $.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&u
         }
     
     
-    });
+    });*/
