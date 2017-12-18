@@ -17,7 +17,7 @@ nav.bg-primary {
 }
 
 .input-profile {
-    margin-bottom: 3em;
+    margin-bottom: 1.6em;
 }
 
 .card {
@@ -32,7 +32,12 @@ nav.bg-primary {
 
 #erro-insuficiente {
     display: none;
+    margin: 0 auto;
 }
+
+/*#social {
+    display: none;
+}*/
 
 svg {
     display: inline;
