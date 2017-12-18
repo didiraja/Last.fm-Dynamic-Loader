@@ -32,7 +32,7 @@ $("#busca-api").click(function () {
 
     $.get("http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=7day&user=" + userProfile + "&api_key=e5faa330af20c2e07a1c6155c9a6e672&format=json", function (response) {
 
-        console.log(response);
+        /*console.log(response);*/
 
         var artists = response.topartists.artist;
 
@@ -44,27 +44,29 @@ $("#busca-api").click(function () {
 
                 geraCard(artists[i].image[4]["#text"], artists[i].name, artists[i]["@attr"].rank, artists[i].playcount, artists[i].url);
                 
-                /*
-                var tweetButton = $('<a>').addClass('twitter-share-button').attr('href', 'http://twitter.com/share').attr('data-url', 'http://didiraja.net/pratice/ajax').attr('data-size', "large").attr('data-text', "Eu ouvi ");
+                /*var tweetButton = $('<a>').addClass('twitter-share-button').attr('href', 'http://twitter.com/share').attr('data-url', 'http://didiraja.net/pratice/ajax').attr('data-size', "large").attr('data-text', "Eu ouvi ");
                 
                 $("#social").append(tweetButton);
                 
-                var tweetText = tweetButton.attr('data-text');
-                
-                // iterando com código limpo e formatação insatisfatória
-                tweetButton.attr("data-text", tweetText + artists[i].name + ",");
-                */
+                var tweetText = tweetButton.attr('data-text');*/
 
             };
             
-            var tweetButton = $('<a>').addClass('twitter-share-button').attr('href', 'http://twitter.com/share').attr('data-url', 'http://didiraja.net/pratice/ajax').attr('data-size', "large").attr('data-text', "Eu ouvi ");
+            var tweetButton = $('<a>').addClass('twitter-share-button').attr('href', 'http://twitter.com/share').attr('data-url', 'http://didiraja.net/pratice/ajax').attr('data-size', "large").attr('data-text', "Eu ouvi");
             
             $("#social").append(tweetButton);
             
-            $(".card-title").text();
+            var ouvidosNome = []
             
-            // iterando com código sujo e formatação correta
-            tweetButton.attr("data-text", "Eu ouvi " + $(".card-title")[0].textContent + ", " + $(".card-title")[1].textContent + ", " + $(".card-title")[2].textContent + ", " + $(".card-title")[3].textContent + ", " + $(".card-title")[4].textContent + " e " + $(".card-title")[5].textContent + " nos últimos 7 dias")
+            for (i = 0; i < 6; i++) {
+                
+                ouvidosNome.push(artists[i].name);
+                
+            }
+            
+            var ouvidosNomeTweet = ouvidosNome.join(", ");
+            
+            tweetButton.attr("data-text", "Eu ouvi " + ouvidosNomeTweet + " nos últimos 7 dias");
             
             twttr.widgets.load();
 
